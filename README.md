@@ -16,6 +16,25 @@ Autonomous agents require real-time processing to avoid collisions. However, dep
 2. **Compute Latency:** Uncompressed matrix multiplication causes severe frame-drops on embedded CPUs, rendering the bot blind during movement.
 3. **Dependency Conflicts:** Bridging PyTorch networks to Edge-compatible formats frequently triggers severe environment conflicts across ONNX and TensorFlow graph structures.
 
+---
+### 📊 Dataset & Class Distribution
+
+The MicroADAS model was trained on a highly diverse, open-source dataset containing **13,000+ annotated frames** of urban and highway driving environments. The dataset is structured in the standard YOLO PyTorch format.
+
+**Class Taxonomy (11 Dynamic Classes):**
+To ensure strict safety compliance, the perception engine tracks both physical obstacles and dynamic traffic control states:
+
+* **Vehicles & Actors:** `car`, `truck`, `biker`, `pedestrian`
+* **Traffic Infrastructure:** `trafficLight` (Standard)
+* **Dynamic Signal States:** `trafficLight-Red`, `trafficLight-Green`, `trafficLight-Yellow`, `trafficLight-RedLeft`, `trafficLight-GreenLeft`, `trafficLight-YellowLeft`
+
+**📥 Acquiring the Data:**
+The raw labeled dataset is open-source and hosted on Roboflow Universe. To replicate this training pipeline, you can download the exact YOLOv8-formatted dataset here:
+
+🔗 **[Self-Driving Car Dataset on Roboflow](https://universe.roboflow.com/roboflow-gw7yv/self-driving-car)**
+
+---
+
 ### 💡 The Solution Architecture
 
 * **Algorithm Scaling:** Utilized a parameter-efficient YOLOv8 Nano backbone, scaling input resolution to `320x320` to drastically reduce overall Floating Point Operations (FLOPs).

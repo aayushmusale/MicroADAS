@@ -1,0 +1,21 @@
+# ==========================================
+# MicroADAS: Edge AI Perception System
+# ==========================================
+
+# 1. Core Vision & Training Pipeline
+ultralytics>=8.4.54
+
+# 2. The Dependency Hell Bypass (Strictly Pinned)
+# Fixes Windows DLL Access Denied Error
+numpy>=1.26.0,<2.2.0
+
+# Bridges the gap between modern exporters and legacy Keras
+tensorflow>=2.0.0,<=2.19.0
+tf_keras<=2.19.0
+
+# 3. Post-Training Quantization (PTQ) & Export Engine
+onnx>=1.12.0
+onnx2tf>=1.26.3,<1.29.0
+sng4onnx>=1.0.1
+onnx_graphsurgeon>=0.3.26
+ai-edge-litert>=1.2.0

@@ -1,0 +1,11 @@
+# YOLO Dataset Configuration Map
+
+# 1. The Paths
+# Pointing YOLO to your exact folder structure
+path: ./dataset          # The root directory of your dataset
+train: images/training
+val: images/testing    # YOLO uses 'val' as the testing set during training
+
+# 2. The Classes (11 Classes for Autonomous Driving)
+nc: 11
+names: ['biker', 'car', 'pedestrian', 'trafficLight', 'trafficLight-Green', 'trafficLight-GreenLeft', 'trafficLight-Red', 'trafficLight-RedLeft', 'trafficLight-Yellow', 'trafficLight-YellowLeft', 'truck']

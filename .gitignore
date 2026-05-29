@@ -1,0 +1,10 @@
+.venv/
+dataset/
+train/
+test/
+valid/
+runs/
+__pycache__/
+*.cache
+*.pt
+*.onnx
